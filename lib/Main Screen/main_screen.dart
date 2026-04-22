@@ -72,7 +72,8 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   String encryptData(Uint8List data, String keyString) {
-    final key = encrypt.Key.fromUtf8(keyString);
+
+    final key = encrypt.Key.fromUtf8(keyString.padRight(32).substring(0,32));
     final iv = encrypt.IV.fromLength(16);
 
     final encrypter = encrypt.Encrypter(
@@ -80,8 +81,9 @@ class _MainScreenState extends State<MainScreen> {
     );
 
     final encrypted = encrypter.encryptBytes(data, iv: iv);
+    final combined = iv.bytes+encrypted.bytes;
 
-    return encrypted.base64;
+    return Base64Encoder().convert(combined);
   }
 
   Uint8List generateQrBytes({
