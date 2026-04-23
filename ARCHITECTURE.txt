@@ -1,0 +1,31 @@
+lib/
+├── features/
+│   └── ticketing/
+│       ├── data/
+│       │   ├── datasources/
+│       │   │   └── encryption_service.dart
+│       │   ├── models/
+│       │   │   ├── station_model.dart
+│       │   │   └── ticket_model.dart
+│       │   └── repositories/
+│       │       └── ticket_repository.dart
+│       ├── domain/
+│       │   ├── models/
+│       │   │   └── station_model.dart
+│       │   ├── usecases/
+│       │   │   ├── usecases.dart
+│       │   │   └── usecases_impl.dart
+│       │   └── service_locator.dart
+│       └── presentation/
+│           ├── cubits/
+│           │   ├── ticket_cubit.dart
+│           │   ├── ticket_event.dart
+│           │   └── ticket_state.dart
+│           └── pages/
+│               └── ticket_page.dart
+├── core/
+│   └── widget/
+│       ├── custom_drop_down.dart
+│       └── custom_text_field.dart
+└── main.dart
+
